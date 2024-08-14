@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'UESPC'
-copyright = '2019, Tianshi Cheng, University of Alberta'
+project = 'CMake Template With Doc'
+copyright = '2024, Tianshi Cheng, University of Alberta'
 author = 'Tianshi Cheng'
 
 # The full version, including alpha/beta/rc tags
