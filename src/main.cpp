@@ -5,5 +5,5 @@ void test(double p1, double p2, double &p3)
 
 int main()
 {
-    return;
+    return 0;
 }

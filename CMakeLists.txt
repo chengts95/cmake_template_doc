@@ -13,7 +13,7 @@ endif()
 
 
 
-aux_source_directory(${PROJECT_SOURCE_DIR}/src/ source_files)
+File( GLOB source_files ${PROJECT_SOURCE_DIR}/src/*.cpp )
 
 
 add_executable(test   ${source_files})
