@@ -1,3 +1,5 @@
 build
-doc/source/**
+doc/build
+doc/source/api
+doc/source/doxyoutput
 .cache
