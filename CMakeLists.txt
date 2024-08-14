@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16.0)
 
 project(test VERSION 0.1.0  LANGUAGES C CXX)
 
+option(BUILD_TESTS "Enable google test" ON)
+
 SET(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH "${CMAKE_CURRENT_SOURCE_DIR}" FORCE)
 
 include(CheckCXXCompilerFlag)
@@ -27,3 +29,6 @@ target_link_libraries(test PRIVATE)
 install (TARGETS test DESTINATION bin)
 
 
+if(BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
