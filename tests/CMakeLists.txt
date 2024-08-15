@@ -15,7 +15,7 @@ endif()
 
 FetchContent_MakeAvailable(googletest)
 
-#add_executable(run_tests src/test.cpp )
-#target_link_libraries(run_tests GTest::gtest_main fb_protocol flatbuffers::flatbuffers  )
+add_executable(run_tests src/test.cpp )
+target_link_libraries(run_tests GTest::gtest_main)
 include(GoogleTest)
-#gtest_discover_tests(run_tests)
+gtest_discover_tests(run_tests)
