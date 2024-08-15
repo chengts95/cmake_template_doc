@@ -16,13 +16,13 @@
 
 
 # -- Project information -----------------------------------------------------
-
+import os
 project = 'CMake Template With Doc'
 copyright = '2024, Tianshi Cheng, University of Alberta'
 author = 'Tianshi Cheng'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = os.environ.get('DOC_VERSION', '0.0.0') 
 # somewhere in `conf.py`, *BERORE* declaring `exhale_args`
 from exhale import utils
 import recommonmark
@@ -83,9 +83,9 @@ extensions = [
 
 # Setup the breathe extension
 breathe_projects = {
-    "My Project": "./doxyoutput/xml"
+    "Doc Project": "./doxyoutput/xml"
 }
-breathe_default_project = "My Project"
+breathe_default_project = "Doc Project"
 
 # Setup the exhale extension
 exhale_args = {
@@ -115,7 +115,7 @@ highlight_language = 'cpp'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import os 
+ 
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
@@ -129,3 +129,11 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 source_suffix = ['.rst', '.md']
+
+# 自定义HTML模板
+html_context = {
+    'display_version': True,
+    'version': release,
+}
+
+
